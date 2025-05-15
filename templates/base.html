@@ -89,7 +89,13 @@
             #}
             <li>
               <a class="btn btn-primary" href="https://github.com/AnamZ78">
-                RESUME <i class="fas fa-arrow-right"></i>
+                GitHub Profile <i class="fas fa-arrow-right"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="btn btn-primary" href="{{ url_for('static', filename='files/Anam_Zahid_Python_Developer_Updated_Resume.pdf') }}" target="_blank" download>
+                RESUME <i class="fas fa-download"></i>
               </a>
             </li>
 
@@ -166,10 +172,12 @@
         </div>
 
         <!-- Attribution -->
-        <p>Copyright &copy; anamzahid 2023, All rights reserved</p>
+        <p>Copyright &copy; anamzahid <span id="currentYear"></span>, All rights reserved</p>
       </div>
     </footer>
-
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 </html>
