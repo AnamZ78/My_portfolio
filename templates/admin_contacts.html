@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block headersection %}
+<section class="header-container">
+    <div class="content-text">
+        <h2>Contact Page</h2>
+    </div>
+</section>
+{% endblock %}
+
+{% block body %}
+<div style="padding: 40px;">
+    <div>
+        <h2 style="background: #FFC72C; color: #222; display: inline-block; padding: 8px 24px; border-radius: 6px;">All Contact Entries</h2>
+        <br><br>
+    </div>
+    <div style="overflow-x:auto;">
+    <table style="width:100%; border-collapse: collapse; background: #181818; color: #fff; font-size: 1rem;">
+      <thead>
+        <tr style="background: #222;">
+          <th style="padding: 12px; border-bottom: 2px solid #FFC72C;">ID</th>
+          <th style="padding: 12px; border-bottom: 2px solid #FFC72C;">Name</th>
+          <th style="padding: 12px; border-bottom: 2px solid #FFC72C;">Email</th>
+          <th style="padding: 12px; border-bottom: 2px solid #FFC72C;">Phone</th>
+          <th style="padding: 12px; border-bottom: 2px solid #FFC72C;">Reason</th>
+          <th style="padding: 12px; border-bottom: 2px solid #FFC72C;">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for c in contacts %}
+        <tr style="border-bottom: 1px solid #333;">
+          <td style="padding: 10px;">{{ c.no }}</td>
+          <td style="padding: 10px;">{{ c.name }}</td>
+          <td style="padding: 10px;">{{ c.email }}</td>
+          <td style="padding: 10px;">{{ c.phone }}</td>
+          <td style="padding: 10px; max-width: 300px; word-break: break-word;">{{ c.reason }}</td>
+          <td style="padding: 10px;">{{ c.date }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+</div>
+{% endblock %}
